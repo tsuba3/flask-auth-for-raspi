@@ -1,5 +1,6 @@
 from bcrypt import checkpw
 from flask import Flask, abort, redirect, request, render_template, make_response
+from gevent.pywsgi import WSGIServer
 import random
 import string
 
@@ -38,4 +39,8 @@ def login():
         return res
     else:
         return abort(403)
+
+if __name__ == '__main__':
+    http_server = WSGIServer(('', 4900), app)
+    http_server.serve_forever()
 
