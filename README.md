@@ -2,7 +2,8 @@
 Very simple password authentication server for nginx
 
 Nginx の設定例
-'''
+
+```
 user www-data;
 worker_processes auto;
 pid /run/nginx.pid;
@@ -45,6 +46,5 @@ http {
 
     }
 }
+```
 
-
-'''
