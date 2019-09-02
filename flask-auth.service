@@ -1,0 +1,15 @@
+[Unit]
+Description=Authentication server
+Before=nginx.service
+After=network.target
+
+[Service]
+User=pi
+ExecStart=python3 index.py
+Restart=always
+Type=simple
+WorkingDirectory=/home/pi/httppy
+
+[Install]
+WantedBy=multi-user.target
+
